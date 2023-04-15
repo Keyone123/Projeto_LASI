@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detalhamento</title>
+</head>
+<body style="background-color: brown; color: white; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px;">
+<center>
+    <h1>Detalhes do Produto</h1>
+    Nome do Produto: {{object.nome}}
+    <br />
+    Preço do Produto: {{object.preco}} R$
+    <br />
+    Estoque do Produto: {{object.estoque}}
+    <br />
+    <br />
+    <input type="submit" value="Deseja deletar o produto?" onclick="location.href = '{% url 'aplicativo:delete' pk=object.id %}'">
+    <br />
+    <br />
+    <input type="submit" value="Deseja editar o produto?" onclick="location.href = '{% url 'aplicativo:update' pk=object.id %}'">
+    <br />
+    <br />
+    <input type="submit" value="Voltar" onclick="location.href = '{% url 'aplicativo:menu' %}'">
+    <br />
+</center>
+
+</body>
+</html>

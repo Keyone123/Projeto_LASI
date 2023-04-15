@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista de Produtos</title>
+
+</head>
+<body style="background-color: brown; color: white; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px;">
+<center>
+    <h1>Lista de Produtos</h1>
+    <ul>
+        {% for Produto in object_list %}
+        <li>{{Produto.nome}} - <a href="{% url 'aplicativo:detail' pk=Produto.id %}">Detalhes</a></li>
+        {% endfor %}
+    </ul>
+    <input type="reset" value="Voltar ao Menu Inicial" onclick="location.href = '{% url 'aplicativo:menu' %}'">
+</center>
+
+</body>
+</html>

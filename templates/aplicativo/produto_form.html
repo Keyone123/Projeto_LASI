@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro</title>
+    <style>
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+</style>
+</head>
+<body style="background-color: brown; color: white; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px;">
+<center>
+    <h1>Por favor, cadastre o produto</h1>
+    <form method=POST action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Salvar" onclick="location.href = '{% url 'aplicativo:menu' %}'">
+        <input type="reset" value="Cancelar" onclick="location.href = '{% url 'aplicativo:menu' %}'">
+    </form>
+</center>
+</body>
+</html>
